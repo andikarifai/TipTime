@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/etInputValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/cost_of_service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no"
+        android:inputType="none" />
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:text="@string/how_was_the_service"
+        app:layout_constraintTop_toBottomOf="@id/etInputValue"
+        app:layout_constraintStart_toStartOf="@id/etInputValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <RadioGroup
+        android:id="@+id/radio"
+        app:layout_constraintStart_toStartOf="@id/tvQuestion"
+        app:layout_constraintTop_toBottomOf="@id/tvQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:text="@string/amazing_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:text="@string/good_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:text="@string/ok_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/tvRoundUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/round_up_tip"
+        android:paddingVertical="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+    <Button
+        android:id="@+id/btnCalculate"
+        android:text="@string/calculate"
+        app:layout_constraintStart_toStartOf="@id/tvRoundUp"
+        app:layout_constraintTop_toBottomOf="@id/tvRoundUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/evTipAmount"
+        android:text="@string/tip_amount"
+        app:layout_constraintEnd_toEndOf="@id/btnCalculate"
+        app:layout_constraintTop_toBottomOf="@id/btnCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:paddingTop="22dp"
+        android:src="@drawable/mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/evTipAmount"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="@string/mail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
